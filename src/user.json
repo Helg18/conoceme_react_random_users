@@ -1,0 +1,62 @@
+{
+  "results": [
+    {
+      "gender": "female",
+      "name": {
+        "title": "mrs",
+        "first": "anna",
+        "last": "lopez"
+      },
+      "location": {
+        "street": "6899 kings road",
+        "city": "wells",
+        "state": "mid glamorgan",
+        "postcode": "XT91 5LP",
+        "coordinates": {
+          "latitude": "11.3608",
+          "longitude": "59.9968"
+        },
+        "timezone": {
+          "offset": "-5:00",
+          "description": "Eastern Time (US & Canada), Bogota, Lima"
+        }
+      },
+      "email": "anna.lopez@example.com",
+      "login": {
+        "uuid": "18a4b5ea-86e4-4714-88d4-eba2d9078a5b",
+        "username": "crazyswan743",
+        "password": "southpark",
+        "salt": "z5sBgsIH",
+        "md5": "a04e083176cb4616d3ea24ea0112d942",
+        "sha1": "4b1086bd1c9d9d7c87c0e22e853f5d58f86c8783",
+        "sha256": "28567ee6c093d08569476303b10a9a7efc7462299017bfa121aaf1f4c630b34f"
+      },
+      "dob": {
+        "date": "1978-04-01T19:50:13Z",
+        "age": 40
+      },
+      "registered": {
+        "date": "2005-03-02T22:16:42Z",
+        "age": 13
+      },
+      "phone": "016977 7930",
+      "cell": "0737-470-856",
+      "id": {
+        "name": "NINO",
+        "value": "ZW 49 04 01 E"
+      },
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/women/84.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/women/84.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/women/84.jpg"
+      },
+      "nat": "GB"
+    }
+  ],
+  "info": {
+    "seed": "8cd82517bb881185",
+    "results": 1,
+    "page": 1,
+    "version": "1.2"
+  }
+}

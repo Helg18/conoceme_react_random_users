@@ -1,0 +1,19 @@
+.info {
+    font-size: 24px;
+    color: gray;
+}
+
+.info:hover {
+    color: dimgray;
+}
+
+.ic-fa {
+    color: #302b63;
+    text-align: center;
+}
+
+.blocks-btn {
+    text-align: center;
+    padding: 10px;
+    margin: 5px auto;
+}

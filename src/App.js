@@ -8,10 +8,8 @@ import './App.css';
 class App extends Component {
   render() {
     return (
-        <div className="envoltorio">
             <div className="">
                 <Header/>
-
                 <div className="container">
                     <div className="row">
                         <Body/>
@@ -19,7 +17,6 @@ class App extends Component {
                 </div>
                 <Footer/>
             </div>
-        </div>
     );
   }
 }
