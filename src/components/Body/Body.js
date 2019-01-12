@@ -1,10 +1,19 @@
 import React, {Component} from 'react';
-import {results} from '../../user';
+import Api from '../../Services/axios';
 import './Body.css';
 
 class Body extends Component {
-    componentWillMount() {
-        this.setState({results});
+    constructor(props) {
+        super(props);
+        this.state = {
+            results: ''
+        };
+        this.getNewPerson = this.getNewPerson.bind(this);
+    }
+
+    async componentWillMount() {
+        let results = await Api.getNewPerson();
+        this.setState({results: results});
     }
 
     ucfirst = (string) => {
@@ -28,19 +37,32 @@ class Body extends Component {
         return address['street'] + ', ' + this.ucfirst(address['city']) + ', ' + this.ucfirst(address['state']);
     };
 
-    getNewPerson = () => {
-        console.log('request new person');
-    };
+    async getNewPerson() {
+        this.setState({results: await Api.getNewPerson()});
+    }
 
     render() {
+        if (this.state.results === '') {
+            return (
+                <div className="container">
+                    <div className="row">
+                        <div className="col-md-12 blocks-btn">
+                            <button className="btn btn-lg btn-success ml-5" onClick={this.getNewPerson}>
+                                Retry..!
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            );
+        }
         const results = this.state.results;
-        const name = this.ucfirst(results[0]['name']['title']) + " " + this.ucfirst(results[0]['name']['first']) + " " + this.ucfirst(results[0]['name']['last']);
-        const genderInfo = this.ucfirst(results[0]['gender']);
-        const gender = this.getMaleFemale(results[0]['gender']);
-        const email = results[0]['email'];
-        const fNac = this.getFNac(results[0]['dob']);
-        const address = this.getAddress(results[0]['location']);
-        const phone = results[0]['cell'];
+        const name = this.ucfirst(results['name']['title']) + " " + this.ucfirst(results['name']['first']) + " " + this.ucfirst(results['name']['last']);
+        const genderInfo = this.ucfirst(results['gender']);
+        const gender = this.getMaleFemale(results['gender']);
+        const email = results['email'];
+        const fNac = this.getFNac(results['dob']);
+        const address = this.getAddress(results['location']);
+        const phone = results['cell'];
         return (
             <div className="col-md-12 mt-5">
                 <div className="card">
@@ -48,7 +70,7 @@ class Body extends Component {
                         <div className="container">
                             <div className="row">
                                 <div className="col-md-4">
-                                    <img src={results[0]['picture']['large']} alt={name} width="100%"/>
+                                    <img src={results['picture']['large']} alt={name} width="100%"/>
                                 </div>
                                 <div className="col-md-8">
                                     <span>Hey! My name is: </span>
@@ -86,7 +108,7 @@ class Body extends Component {
                                                 <td width="10px" className="ic-fa"><i
                                                     className="fas fa-map-marked-alt"/></td>
                                                 <td>
-                                                    <span className="info">{address}</span>
+                                                    <span className="info">{address}.</span>
                                                 </td>
                                             </tr>
 
