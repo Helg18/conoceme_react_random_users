@@ -22,3 +22,34 @@ img {
     margin-top: 20px;
     border-radius: 15px;
 }
+
+.btn-margin {
+    margin: auto 25px;
+}
+
+@media only screen and (max-width: 600px) {
+    table {
+        overflow: hidden;
+    }
+
+    .info {
+        font-size: 16px;
+    }
+
+    .blocks-btn {
+        text-align: center;
+        margin: 25px auto;
+    }
+
+    .block-mb-5 {
+        margin-bottom: 50px;
+    }
+
+    .btn-margin {
+        margin: auto 15px;
+    }
+
+    hr {
+        margin-top: 45px;
+    }
+}

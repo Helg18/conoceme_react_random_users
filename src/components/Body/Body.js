@@ -48,7 +48,7 @@ class Body extends Component {
                     <div className="row">
                         <div className="col-md-12 blocks-btn">
                             <button className="btn btn-lg btn-success ml-5" onClick={this.getNewPerson}>
-                                Retry..!
+                                <i className="fa fa-redo"/>Retry..!
                             </button>
                         </div>
                     </div>
@@ -64,7 +64,7 @@ class Body extends Component {
         const address = this.getAddress(results['location']);
         const phone = results['cell'];
         return (
-            <div className="col-md-12 mt-5">
+            <div className="col-md-12 col-xs-12 col-sm-12 mt-5 mb-5">
                 <div className="card">
                     <div className="card-body">
                         <div className="container">
@@ -75,7 +75,7 @@ class Body extends Component {
                                 <div className="col-md-8">
                                     <span>Hey! My name is: </span>
                                     <h3>{name}</h3>
-                                    <div className="row ml-1">
+                                    <div className="row">
                                         <table className="table table-hover table-border">
                                             <tbody className="info">
                                             {/* Email */}
@@ -131,11 +131,11 @@ class Body extends Component {
                     <div className="card-footer">
                         <div className="container">
                             <div className="row">
-                                <div className="col-md-12 blocks-btn">
-                                    <button className="btn btn-lg btn-danger mr-5" onClick={this.getNewPerson}>
+                                <div className="col-md-12 col-xs-6 col-sm-6 blocks-btn">
+                                    <button className="btn btn-lg btn-danger btn-margin" onClick={this.getNewPerson}>
                                         Next
                                     </button>
-                                    <button className="btn btn-lg btn-success ml-5" onClick={this.getNewPerson}>
+                                    <button className="btn btn-lg btn-success btn-margin" onClick={this.getNewPerson}>
                                         Match
                                     </button>
                                 </div>
