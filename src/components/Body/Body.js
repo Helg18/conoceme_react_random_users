@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import Api from '../../Services/axios';
 import './Body.css';
 
@@ -13,7 +13,7 @@ class Body extends Component {
 
     async componentWillMount() {
         let results = await Api.getNewPerson();
-        this.setState({results: results});
+        this.setState({ results: results });
     }
 
     ucfirst = (string) => {
@@ -22,9 +22,9 @@ class Body extends Component {
 
     getMaleFemale = (gender) => {
         if (gender === 'female') {
-            return <i className="fa fa-1x fa-venus"/>
+            return <i className="fa fa-1x fa-venus" />
         }
-        return <i className="fa fa-1x fa-mars"/>
+        return <i className="fa fa-1x fa-mars" />
 
     };
 
@@ -34,11 +34,11 @@ class Body extends Component {
     };
 
     getAddress = (address) => {
-        return address['street'] + ', ' + this.ucfirst(address['city']) + ', ' + this.ucfirst(address['state']);
+        return address['street'].number + ' ' + address['street'].name + ', ' + this.ucfirst(address['city']) + ', ' + this.ucfirst(address['state']);
     };
 
     async getNewPerson() {
-        this.setState({results: await Api.getNewPerson()});
+        this.setState({ results: await Api.getNewPerson() });
     }
 
     render() {
@@ -48,7 +48,7 @@ class Body extends Component {
                     <div className="row">
                         <div className="col-md-12 blocks-btn">
                             <button className="btn btn-lg btn-success ml-5" onClick={this.getNewPerson}>
-                                <i className="fa fa-redo"/>Retry..!
+                                <i className="fa fa-redo" />Retry..!
                             </button>
                         </div>
                     </div>
@@ -70,7 +70,7 @@ class Body extends Component {
                         <div className="container">
                             <div className="row">
                                 <div className="col-md-4">
-                                    <img src={results['picture']['large']} alt={name} width="100%"/>
+                                    <img src={results['picture']['large']} alt={name} width="100%" />
                                 </div>
                                 <div className="col-md-8">
                                     <span>Hey! My name is: </span>
@@ -78,47 +78,47 @@ class Body extends Component {
                                     <div className="row">
                                         <table className="table table-hover table-border">
                                             <tbody className="info">
-                                            {/* Email */}
-                                            <tr>
-                                                <td className="ic-fa"><i className="fa fa-1x fa-at"/></td>
-                                                <td>
-                                                    <span className="info">{email}</span>
-                                                </td>
-                                            </tr>
+                                                {/* Email */}
+                                                <tr>
+                                                    <td className="ic-fa"><i className="fa fa-1x fa-at" /></td>
+                                                    <td>
+                                                        <span className="info">{email}</span>
+                                                    </td>
+                                                </tr>
 
-                                            {/* Genero */}
-                                            <tr>
-                                                <td width="10px" className="ic-fa">{gender}</td>
-                                                <td>
-                                                    <span className="info">{genderInfo}</span>
-                                                </td>
-                                            </tr>
+                                                {/* Genero */}
+                                                <tr>
+                                                    <td width="10px" className="ic-fa">{gender}</td>
+                                                    <td>
+                                                        <span className="info">{genderInfo}</span>
+                                                    </td>
+                                                </tr>
 
-                                            {/* F. de nacimiento */}
-                                            <tr>
-                                                <td width="10px" className="ic-fa"><i
-                                                    className="fa fa-1x fa-birthday-cake"/></td>
-                                                <td>
-                                                    <span className="info">{fNac}</span>
-                                                </td>
-                                            </tr>
+                                                {/* F. de nacimiento */}
+                                                <tr>
+                                                    <td width="10px" className="ic-fa"><i
+                                                        className="fa fa-1x fa-birthday-cake" /></td>
+                                                    <td>
+                                                        <span className="info">{fNac}</span>
+                                                    </td>
+                                                </tr>
 
-                                            {/* Direccion */}
-                                            <tr>
-                                                <td width="10px" className="ic-fa"><i
-                                                    className="fas fa-map-marked-alt"/></td>
-                                                <td>
-                                                    <span className="info">{address}.</span>
-                                                </td>
-                                            </tr>
+                                                {/* Direccion */}
+                                                <tr>
+                                                    <td width="10px" className="ic-fa"><i
+                                                        className="fas fa-map-marked-alt" /></td>
+                                                    <td>
+                                                        <span className="info">{address}.</span>
+                                                    </td>
+                                                </tr>
 
-                                            {/* Telefono */}
-                                            <tr>
-                                                <td width="10px" className="ic-fa"><i className="fas fa-phone"/></td>
-                                                <td>
-                                                    <span className="info">+1{phone}</span>
-                                                </td>
-                                            </tr>
+                                                {/* Telefono */}
+                                                <tr>
+                                                    <td width="10px" className="ic-fa"><i className="fas fa-phone" /></td>
+                                                    <td>
+                                                        <span className="info">+1{phone}</span>
+                                                    </td>
+                                                </tr>
 
 
                                             </tbody>
